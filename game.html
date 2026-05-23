@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="../clover.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@248&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Monsieur+La+Doulaise&display=swap"
+        rel="stylesheet">
+
+    <title>Study Checklist</title>
+
+    <style>
+        :root {
+            --color: #5c4040;
+            --bc:#f5ffd5;
+        }
+
+        .bitcount-prop-single {
+            font-family: "Bitcount Prop Single", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 248;
+            font-style: normal;
+            font-variation-settings:
+                "slnt" 0,
+                "CRSV" 0.5,
+                "ELSH" 0,
+                "ELXP" 0;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(https://i.pinimg.com/1200x/f6/65/39/f665394416ec570e357a0ac29b8ec2f8.jpg);
+            color: var(--color);
+            padding: 20px;
+            font-family: "Bitcount Prop Single", system-ui;
+            font-weight: 900;
+        }
+        .back{
+            width: 180px;
+            margin: 10px;
+            padding: 8px;
+            background: #e6ffbf;
+            color: var(--color);
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border: none;
+            border-radius: 12px;
+            border: 1px solid var(--color);
+            background: #d9ffd0;
+            color: var(--color);
+            font-size: 15px;
+        }
+
+        /* LAYOUT */
+        .layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        /* LEFT */
+        .left-sidebar {
+            flex: 2;
+        }
+
+        /* RIGHT */
+        .right-sidebar {
+            flex: 1;
+        }
+
+        /* CARD */
+        .card {
+            background: var(--bc);
+            border: 1px solid var(--color);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* CALENDAR */
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .day {
+            border: 1px solid white;
+            background-color: #ffd2f2;
+            color: var(--color);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            user-select: none;
+        }
+
+        .day:hover {
+            transform: scale(1.05);
+        }
+
+        .done {
+            background: #5ee190 !important;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            width: 100%;
+            height: 22px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: #fff046;
+            transition: 0.3s;
+        }
+
+        /* YEAR */
+        .level-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* TEXTAREA */
+        textarea {
+            width: 100%;
+            height: 140px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+            background: #fbffd7;
+            color: white;
+            resize: none;
+        }
+
+        /* TASKS */
+        .task,
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* TEXT */
+        .small-text {
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        /* MOBILE */
+        @media(max-width:900px) {
+
+            .layout {
+                flex-direction: column;
+            }
+
+            .left-sidebar,
+            .right-sidebar {
+                width: 100%;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .calendar {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .day {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+        }
+
+        .dday-card {
+            height: auto;
+            width: 320px;
+            border: 1px solid var(--color);
+            background: #a9bce4;
+            padding: 20px;
+            border-radius: 30px;
+            color: var(--color);
+
+        }
+
+        .dday-image {
+
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            background: url(https://media1.tenor.com/m/36Yvq11F1DwAAAAC/c2-snow.gif);
+            background-position: center 20%;
+
+        }
+
+        .dday-card h2 {
+            margin-bottom: 25px;
+            font-size: 20px;
+
+        }
+
+        .dday-item {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .dday-item span:last-child {
+
+            padding: 5px 12px;
+            border-radius: 10px;
+
+        }
+
+        .pink span:last-child {
+
+            background: #ffd6ef;
+
+        }
+
+        .green span:last-child {
+
+            background: #a4ffbb;
+
+        }
+
+        @media(max-width:600px) {
+
+            .dday-card {
+
+                width: 100%;
+
+            }
+
+            .dday-card h2 {
+
+                font-size: 28px;
+
+            }
+
+            .dday-item {
+
+                font-size: 20px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back">
+                <a href="index.html">Back Home</a>
+            </div>
+    <div class="container">
+
+        <h1>Study Checklist</h1>
+
+        <!-- MONTH YEAR -->
+        <div class="top-bar">
+
+            <select id="monthSelect"></select>
+
+            <select id="yearSelect"></select>
+
+        </div>
+
+        <div class="layout">
+            <!-- D-DAY COUNTER CARD -->
+
+            <div class="dday-card">
+
+                <img src="your-image.jpg" class="dday-image">
+
+                <h2>✿ d-day counter</h2>
+
+                <div class="dday-item pink">
+                    <span>TGAT-TPAT</span>
+                    <span id="tgatDay"></span>
+                </div>
+
+                <div class="dday-item green">
+                    <span>ALEVEL</span>
+                    <span id="alevelDay"></span>
+                </div>
+
+            </div>
+            <!-- LEFT -->
+            <div class="left-sidebar">
+
+                <!-- YEAR STREAK -->
+                <div class="card">
+
+                    <div class="level-box">
+
+                        <div>
+                            <h2>Year Streak</h2>
+                            <p id="streakText">0 Days</p>
+                        </div>
+
+                        <div>
+                            <h2 id="levelText">Level 1</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress" id="yearProgress"></div>
+                    </div>
+
+                </div>
+
+                <!-- CALENDAR -->
+                <div class="card">
+
+                    <h2>Monthly Study Tracker</h2>
+
+                    <div class="progress-container">
+                        <div class="progress" id="monthProgress"></div>
+                    </div>
+
+                    <p class="small-text" id="monthText">
+                        0%
+                    </p>
+
+                    <div class="calendar" id="calendar"></div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right-sidebar">
+
+                <!-- DAILY CHECKLIST -->
+                <div class="card">
+
+                    <h2> Checklist </h2>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>ALEVEL MATH 1 3/71</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TPAT 3 12/70</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>ALEVEL PHYSICS 3/71</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 1 12/70</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 2 12/70</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 3 12/70</label>
+                    </div>
+
+                </div>
+
+
+                <!-- SUBJECT PROGRESS -->
+
+
+                <div class="card">
+
+                    <h2>Subject Progress</h2>
+                    <!-- PROGRESS BAR -->
+                    <div class="progress-container">
+                        <div class="progress" id="subjectProgress"></div>
+                    </div>
+
+                    <p class="small-text" id="subjectText">
+                        0%
+                    </p>
+
+                    <div class="task">
+                        <input type="checkbox" class="subjectCheck">
+                        <label>Math</label>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox" class="subjectCheck">
+                        <label>Science</label>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox" class="subjectCheck">
+                        <label>English</label>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox" class="subjectCheck">
+                        <label>Programming</label>
+                    </div>
+
+                </div>
+                <!-- STUDY STATEMENT -->
+                <div class="card">
+
+                    <h2>Study Statement</h2>
+
+                    <textarea id="statement" placeholder="เขียนเป้าหมายของเดือนนี้..."></textarea>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const calendar = document.getElementById("calendar");
+
+        const monthSelect =
+            document.getElementById("monthSelect");
+
+        const yearSelect =
+            document.getElementById("yearSelect");
+
+        const monthProgress =
+            document.getElementById("monthProgress");
+
+        const monthText =
+            document.getElementById("monthText");
+
+        const yearProgress =
+            document.getElementById("yearProgress");
+
+        const streakText =
+            document.getElementById("streakText");
+
+        const levelText =
+            document.getElementById("levelText");
+
+        const statement =
+            document.getElementById("statement");
+
+
+        // MONTHS
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+
+
+        // CURRENT DATE
+        const currentDate = new Date();
+
+
+        // CREATE MONTH
+        months.forEach((month, index) => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = index;
+            option.textContent = month;
+
+            monthSelect.appendChild(option);
+
+        });
+
+
+        // CREATE YEAR
+        for (let year = 2026; year <= 2035; year++) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = year;
+            option.textContent = year;
+
+            yearSelect.appendChild(option);
+
+        }
+
+
+        // DEFAULT
+        monthSelect.value =
+            currentDate.getMonth();
+
+        yearSelect.value =
+            currentDate.getFullYear();
+
+
+        // SAVE
+        function saveData(key, data) {
+
+            localStorage.setItem(
+                key,
+                JSON.stringify(data)
+            );
+
+        }
+
+
+        // LOAD
+        function loadData(key) {
+
+            return JSON.parse(
+                localStorage.getItem(key)
+            ) || [];
+
+        }
+
+
+        // CALENDAR
+        function renderCalendar() {
+
+            calendar.innerHTML = "";
+
+            const month =
+                parseInt(monthSelect.value);
+
+            const year =
+                parseInt(yearSelect.value);
+
+            const daysInMonth =
+                new Date(
+                    year,
+                    month + 1,
+                    0
+                ).getDate();
+
+            const storageKey =
+                `calendar-${month}-${year}`;
+
+            let savedDays =
+                loadData(storageKey);
+
+            for (let day = 1; day <= daysInMonth; day++) {
+
+                const div =
+                    document.createElement("div");
+
+                div.classList.add("day");
+
+                div.textContent = day;
+
+                if (savedDays.includes(day)) {
+
+                    div.classList.add("done");
+
+                }
+
+                div.addEventListener("click", () => {
+
+                    div.classList.toggle("done");
+
+                    if (savedDays.includes(day)) {
+
+                        savedDays =
+                            savedDays.filter(
+                                d => d !== day
+                            );
+
+                    } else {
+
+                        savedDays.push(day);
+
+                    }
+
+                    saveData(storageKey, savedDays);
+
+                    updateMonthProgress(
+                        daysInMonth,
+                        savedDays.length
+                    );
+
+                    updateYearStats();
+
+                });
+
+                calendar.appendChild(div);
+
+            }
+
+            updateMonthProgress(
+                daysInMonth,
+                savedDays.length
+            );
+
+            loadStatement();
+
+        }
+
+
+        // MONTH PROGRESS
+        function updateMonthProgress(total, done) {
+
+            const percent =
+                Math.round(
+                    (done / total) * 100
+                );
+
+            monthProgress.style.width =
+                percent + "%";
+
+            monthText.textContent =
+                percent + "% Complete";
+
+        }
+
+
+        // YEAR STREAK
+        function updateYearStats() {
+
+            let totalDone = 0;
+
+            for (let m = 0; m < 12; m++) {
+
+                const key =
+                    `calendar-${m}-${yearSelect.value}`;
+
+                const data =
+                    loadData(key);
+
+                totalDone += data.length;
+
+            }
+
+            streakText.textContent =
+                totalDone + " Days";
+
+            const percent =
+                Math.min(
+                    (totalDone / 365) * 100,
+                    100
+                );
+
+            yearProgress.style.width =
+                percent + "%";
+
+            let level = 1;
+
+            if (totalDone >= 30) level = 2;
+            if (totalDone >= 60) level = 3;
+            if (totalDone >= 120) level = 4;
+            if (totalDone >= 200) level = 5;
+            if (totalDone >= 300) level = 6;
+
+            levelText.textContent =
+                "Level " + level;
+
+        }
+
+
+        // STATEMENT KEY
+        function getStatementKey() {
+
+            return `statement-${monthSelect.value}-${yearSelect.value}`;
+
+        }
+
+
+        // LOAD STATEMENT
+        function loadStatement() {
+
+            const key = getStatementKey();
+
+            statement.value =
+                localStorage.getItem(key)
+                || "";
+
+        }
+
+
+        // SAVE STATEMENT
+        statement.addEventListener("input", () => {
+
+            const key = getStatementKey();
+
+            localStorage.setItem(
+                key,
+                statement.value
+            );
+
+        });
+
+
+        // SUBJECT PROGRESS
+        const subjectChecks =
+            document.querySelectorAll(".subjectCheck");
+
+        const subjectProgress =
+            document.getElementById("subjectProgress");
+
+        const subjectText =
+            document.getElementById("subjectText");
+
+
+        // UPDATE SUBJECT
+        function updateSubjectProgress() {
+
+            let checked = 0;
+
+            subjectChecks.forEach(check => {
+
+                if (check.checked) {
+
+                    checked++;
+
+                }
+
+            });
+
+            const percent =
+                Math.round(
+                    (checked / subjectChecks.length) * 100
+                );
+
+            subjectProgress.style.width =
+                percent + "%";
+
+            subjectText.textContent =
+                percent + "% Complete";
+
+            const saveArray = [];
+
+            subjectChecks.forEach(check => {
+
+                saveArray.push(check.checked);
+
+            });
+
+            localStorage.setItem(
+                "subjectChecks",
+                JSON.stringify(saveArray)
+            );
+
+        }
+
+
+        // LOAD SUBJECT
+        const savedSubject =
+            JSON.parse(
+                localStorage.getItem("subjectChecks")
+            ) || [];
+
+        subjectChecks.forEach((check, index) => {
+
+            check.checked =
+                savedSubject[index] || false;
+
+            check.addEventListener(
+                "change",
+                updateSubjectProgress
+            );
+
+        });
+
+        updateSubjectProgress();
+
+
+        // DAILY CHECKLIST
+        const dailyChecks =
+            document.querySelectorAll(".dailyCheck");
+
+        const savedDaily =
+            JSON.parse(
+                localStorage.getItem("dailyChecks")
+            ) || [];
+
+        dailyChecks.forEach((check, index) => {
+
+            check.checked =
+                savedDaily[index] || false;
+
+            check.addEventListener("change", () => {
+
+                const saveArray = [];
+
+                dailyChecks.forEach(box => {
+
+                    saveArray.push(box.checked);
+
+                });
+
+                localStorage.setItem(
+                    "dailyChecks",
+                    JSON.stringify(saveArray)
+                );
+
+            });
+
+        });
+
+
+        // CHANGE MONTH
+        monthSelect.addEventListener(
+            "change",
+            () => {
+
+                renderCalendar();
+                updateYearStats();
+
+            }
+        );
+
+
+        // CHANGE YEAR
+        yearSelect.addEventListener(
+            "change",
+            () => {
+
+                renderCalendar();
+                updateYearStats();
+
+            }
+        );
+
+
+        // START
+        renderCalendar();
+        updateYearStats();
+        // TGAT DATE
+        const tgatDate =
+            new Date("2027-12-01");
+
+        // ALEVEL DATE
+        const alevelDate =
+            new Date("2028-03-01");
+
+
+        // TODAY
+        const today =
+            new Date();
+
+
+        // FUNCTION
+        function getDaysLeft(targetDate) {
+
+            const diff =
+                targetDate - today;
+
+            const days =
+                Math.ceil(
+                    diff / (1000 * 60 * 60 * 24)
+                );
+
+            return days;
+
+        }
+
+
+        // SHOW TGAT
+        document.getElementById("tgatDay")
+            .innerText =
+            getDaysLeft(tgatDate)
+            + " day left!";
+
+
+        // SHOW ALEVEL
+        document.getElementById("alevelDay")
+            .innerText =
+            getDaysLeft(alevelDate)
+            + " day left!";
+
+    </script>
+
+</body>
+
+</html>
