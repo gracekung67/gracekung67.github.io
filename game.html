@@ -39,7 +39,7 @@
         }
 
         body {
-            background: url(https://i.pinimg.com/1200x/7b/7a/b0/7b7ab088ab125bbc82f7e9359b712433.jpg);
+            background: url(https://i.pinimg.com/736x/c2/7e/48/c27e488c7ec60e73275ffedd4672554a.jpg);
             background-size: cover;
             color: var(--color);
             padding: 20px;
@@ -65,10 +65,11 @@
         h1 {
             text-align: center;
             border-radius: 90px;
-            padding: 10px;
-            width: 400px;
+            padding: 15px;
+            border: 1px solid var(--color);
+            width: 350px;
             background-color: white;
-            font-size: 40px;
+            font-size: 25px;
             margin-bottom: 20px;
 
         }
@@ -203,21 +204,6 @@
             opacity: 0.8;
             margin-top: 10px;
         }
-
-        /* MOBILE */
-        @media(max-width:900px) {
-
-            .layout {
-                flex-direction: column;
-            }
-
-            .left-sidebar,
-            .right-sidebar {
-                width: 100%;
-            }
-
-        }
-
         .dday-card {
             height: auto;
             width: 320px;
@@ -276,45 +262,20 @@
             background: #cdffd9;
 
         }
+ /* MOBILE */
+        @media(max-width:900px) {
 
-        @media(max-width:600px) {
-
-            body {
-                padding: 12px;
+            .layout {
+                flex-direction: column;
             }
 
-            h1 {
-                font-size: 30px;
-            }
-
-            .calendar {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .day {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-            .dday-card {
-
+            .left-sidebar,
+            .right-sidebar {
                 width: 100%;
-
-            }
-
-            .dday-card h2 {
-
-                font-size: 28px;
-
-            }
-
-            .dday-item {
-
-                font-size: 20px;
-
             }
 
         }
+
     </style>
 </head>
 
