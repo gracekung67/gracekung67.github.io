@@ -15,8 +15,8 @@
 
     <style>
         :root {
-            --color: #5c4040;
-            --bc:#f5ffd5;
+            --color: #260b0b;
+            --bc:#a19cb7;
         }
 
         .bitcount-prop-single {
@@ -39,7 +39,8 @@
         }
 
         body {
-            background: url(https://i.pinimg.com/1200x/f6/65/39/f665394416ec570e357a0ac29b8ec2f8.jpg);
+            background: url(https://i.pinimg.com/1200x/7b/7a/b0/7b7ab088ab125bbc82f7e9359b712433.jpg);
+            background-size: cover;
             color: var(--color);
             padding: 20px;
             font-family: "Bitcount Prop Single", system-ui;
@@ -51,6 +52,8 @@
             padding: 8px;
             background: #e6ffbf;
             color: var(--color);
+            text-align: center;
+            border-radius: 90px;
         }
 
         /* MAIN */
@@ -60,6 +63,11 @@
         }
 
         h1 {
+            text-align: center;
+            border-radius: 90px;
+            padding: 10px;
+            width: 400px;
+            background-color: white;
             font-size: 40px;
             margin-bottom: 20px;
 
@@ -119,7 +127,7 @@
 
         .day {
             border: 1px solid white;
-            background-color: #ffd2f2;
+            background-color: #ffa3c8;
             color: var(--color);
             padding: 15px;
             border-radius: 15px;
@@ -134,7 +142,7 @@
         }
 
         .done {
-            background: #5ee190 !important;
+            background: #9bff93 !important;
         }
 
         /* PROGRESS BAR */
@@ -150,7 +158,7 @@
         .progress {
             height: 100%;
             width: 0%;
-            background: #fff046;
+            background: #6a63ac;
             transition: 0.3s;
         }
 
@@ -172,7 +180,7 @@
             border-radius: 15px;
             padding: 15px;
             background: #fbffd7;
-            color: white;
+            color: var(--color);
             resize: none;
         }
 
@@ -210,32 +218,11 @@
 
         }
 
-        @media(max-width:600px) {
-
-            body {
-                padding: 12px;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .calendar {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .day {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-        }
-
         .dday-card {
             height: auto;
             width: 320px;
             border: 1px solid var(--color);
-            background: #a9bce4;
+            background: #cfd5ee;
             padding: 20px;
             border-radius: 30px;
             color: var(--color);
@@ -265,9 +252,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             margin-bottom: 18px;
-
             font-size: 20px;
             font-weight: bold;
 
@@ -282,17 +267,34 @@
 
         .pink span:last-child {
 
-            background: #ffd6ef;
+            background: #fff6cd;
 
         }
 
         .green span:last-child {
 
-            background: #a4ffbb;
+            background: #cdffd9;
 
         }
 
         @media(max-width:600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .calendar {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .day {
+                padding: 12px;
+                font-size: 14px;
+            }
 
             .dday-card {
 
@@ -479,7 +481,7 @@
 
                     <h2>Study Statement</h2>
 
-                    <textarea id="statement" placeholder="เขียนเป้าหมายของเดือนนี้..."></textarea>
+                    <textarea id="statement" placeholder="how about u..."></textarea>
 
                 </div>
 
