@@ -460,9 +460,22 @@ main::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-position: center;
 }
+.box-statustwo{
+
+    background: url("https://i.pinimg.com/1200x/86/7d/3c/867d3c0c94eccf4b8c350b9aced1428b.jpg");
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    height:200px;
+}
+
+p{
+    text-align: center;
+    font-size: large;
+    font-weight: 900;
+}
 
 /*footer*/
-
 footer {
     height: 40px;
     width: 100%;
