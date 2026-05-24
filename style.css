@@ -160,16 +160,6 @@ body {
     }
 }
 
-/*  bottom-image */
-
-.bottom_navbar {
-    width: 100%;
-    height: 50px;
-    background: url(kros.png);
-    background-size: 250px;
-    margin-top: -3px;
-}
-
 .flex {
     display: flex;
 }
@@ -339,8 +329,6 @@ main::-webkit-scrollbar {
 .centerinner_2 {
     border-radius: 5px;
     border: 2px solid var(--border_center);
-    background: url();
-    background-size: 100%;
     padding: 10px;
     margin-top: 10px;
     height: 330px;
@@ -355,38 +343,78 @@ main::-webkit-scrollbar {
     height: 20px;
 }
 
-.centerinner_two {
-    color: var(--border);
-    background: url();
-    padding: 5px;
-    text-align: center;
-    font: 10px bold;
-    font-family: "Basic-Pixel";
-    display: flex;
-    justify-content: center;
+#vinyl-gallery * {
+    box-sizing: border-box;
+}
+
+#vinyl-gallery {
+    width: 100% !important;
+    height: 240px !important;
+    margin-top: -20px;
+    margin: 0px 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative !important;
+    margin-left: -6px !important;
     align-items: center;
+    justify-content: center;
+    
 }
 
-.music-cover img {
-    width: 180px;
+#vinyl-gallery .vinyl {
+    perspective: 500px !important;
+    width: 28px !important;
+    transition: width 0.5s !important;
+    
 }
 
-.music-cover p {
-    font-size: 18px;
-    padding: 5px;
-    font-weight: 900;
-    color: var(--fontcontent);
-    background: #fff2ff;
-    font-family: "Bitcount Prop Single", system-ui;
-    padding: 12px;
+#vinyl-gallery .vinyl:hover {
+    width: 148px !important;
 }
 
+#vinyl-gallery img {
+    display: block !important;
+    transition: transform 0.5s, width 0.5s, height 0.5s, margin-top 0.5s !important;
+    width: 180px !important;
+    height: 180px !important;
+    transform: rotateX(0deg) rotateY(25deg) !important;
+    transform-style: preserve-3d !important;
+    border-radius: 4px !important;
+    border: 2px solid #0000001a !important;
+    object-fit: cover !important;
+    
+}
+
+#vinyl-gallery .vinyl:hover img {
+    transform: rotateX(0deg) rotateY(10deg) !important;
+    width: 188px !important;
+    height: 188px !important;
+    margin-top: -2px !important;
+    
+}
+
+#vinyl-gallery .title {
+    color: #1c0b0b;
+    margin-top: 100px;
+    padding: 2px;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 15px ;
+    font-weight: 600;
+    
+}
+
+#vinyl-gallery .vinyl:hover+.title {
+    visibility: visible;
+}
 
 .centerinner_3 {
     border-radius: 5px;
     margin-top: 10px;
     border: 2px solid var(--border_center);
-    background: url();
     background-size: 100%;
     height: 500px;
     padding: 10px;
@@ -460,16 +488,17 @@ main::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-position: center;
 }
-.box-statustwo{
+
+.box-statustwo {
 
     background: url("https://i.pinimg.com/1200x/86/7d/3c/867d3c0c94eccf4b8c350b9aced1428b.jpg");
     background-size: cover;
     align-items: center;
     justify-content: center;
-    height:200px;
+    height: 200px;
 }
 
-p{
+p {
     text-align: center;
     font-size: large;
     font-weight: 900;
