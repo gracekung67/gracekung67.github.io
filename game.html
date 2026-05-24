@@ -56,8 +56,13 @@
         }
 
         body {
-            background: url(https://media1.tenor.com/m/ZYDQhDIbbjAAAAAd/megumi-fushiguro-ten-shadows.gif);
-            background-size: contain;
+            background: url(https://i.pinimg.com/originals/8a/cc/22/8acc22e8f29808dd8f21ffba5c4d32c8.gif);
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
             color: var(--color);
             padding: 20px;
             font-family: "Elms Sans", sans-serif;
@@ -244,7 +249,6 @@
         .task,
         .checklist-item {
             display: flex;
-            align-items: center;
             gap: 10px;
             margin-top: 15px;
         }
@@ -315,25 +319,128 @@
 
         }
 
-        /* MOBILE */
-        @media (max-width: 600px) {
+        /* =========================
+   MOBILE RESPONSIVE
+========================= */
+        @media (max-width: 900px) {
+
+            body {
+                padding: 10px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            h1 {
+                font-size: 32px;
+                padding: 12px;
+            }
+
+            .layout {
+                flex-direction: column;
+            }
+
+            main {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+            }
+
+            .right-sidebar {
+                width: 100%;
+            }
 
             .dday-card {
                 width: 100%;
-                padding: 15px;
-                border-radius: 20px;
             }
 
-            .dday-card h2 {
-                font-size: 24px;
+            .box {
+                flex-direction: column;
             }
 
-            .dday-item {
-                font-size: 18px;
+            .card {
+                width: 100%;
+            }
+
+            .calendar {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 0px;
+            }
+
+            .day {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+            }
+
+            select {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            textarea {
+                height: 120px;
+                font-size: 16px;
+            }
+
+            .task label,
+            .checklist-item label {
+                font-size: 15px;
+                word-break: break-word;
+            }
+
+            .progress-container {
+                height: 18px;
             }
 
             .dday-image {
-                height: 150px;
+                height: 180px;
+            }
+
+            .dday-item {
+                font-size: 16px;
+            }
+
+            .back {
+                width: 100%;
+            }
+
+        }
+
+
+        /* =========================
+   EXTRA SMALL PHONE
+========================= */
+        @media (max-width: 500px) {
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .calendar {
+                gap: 4px;
+            }
+
+            .day {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .task,
+            .checklist-item {
+                align-items: flex-start;
+            }
+
+            input[type="checkbox"] {
+                min-width: 18px;
+                min-height: 18px;
+            }
+
+            .dday-card h2,
+            .card h2 {
+                font-size: 22px;
             }
 
         }
