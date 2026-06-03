@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    background: url(https://i.pinimg.com/736x/4d/8b/07/4d8b079149e6b0862548e031aec3b53f.jpg);
+    background-size: 500px;
+    font-family: "Bitcount Prop Single", system-ui;
+
+}
+
+@font-face {
+    font-family: "Basic-Pixel";
+    src: url(https://file.garden/Zuy95U5nUSPb-gio/basiic.ttf) format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --border: #4f474e;
+    --border_center: #c0a6b3;
+    --content: #f6d8eb;
+    --font: #2f202a;
+    --fontcontent: #174a1c;
+}
+
+.home {
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: #ffffffd6;
+    width: 110px;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+    text-decoration-line: none;
+    font-weight: 900;
+}
+
+.home a:hover {
+    text-decoration: underline;
+    color: var(--fontcontent);
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    border-width: 15px;
+    border-style: solid;
+    border-image: url(https://i.postimg.cc/RZFWTWwp/esevc3.png) 12 fill round;
+}
+
+h1 {
+    font-family: "Basic-Pixel";
+    font-weight: 900;
+    text-align: center;
+    color: var(--font);
+}
+
+.layout {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    background: #ffffffbd;
+    background-size: 400px;
+}
+
+
+.leftSidebar {
+    border: 0px solid var(--border);
+    width: 270px;
+    margin: 0px 10px 0px 0px;
+}
+
+select{
+    border: 1px solid red;
+    width: 80px;
+    height: 30px;
+    margin-bottom: 10px;
+    color: var(--font);
+}
+
+.dday-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff01e07;
+
+}
+
+.images {
+    width: 100%;
+    height: 170px;
+    background: url(https://i.pinimg.com/1200x/cd/18/87/cd1887889fd920071ffa3b3bb000bc2b.jpg);
+    background-size: cover;
+}
+
+main {
+    border-radius: 12px;
+    flex: 2;
+    width: 100%;
+    
+}
+
+.progress-container{
+    border: 1px solid red;
+    height: 25px;
+    border-radius: 100px;
+}
+
+.card {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0px 0px 10px 0px;
+    background: #fff01e07;
+}
+
+.level-box{
+    display: flex;
+    font-weight: 900;
+    gap: 460px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 330px;
+    margin: auto;
+}
+
+
+.day {
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+    font-weight: 900;
+    margin: 2px;
+}
+
+.day:hover {
+    transform: scale(1.05);
+}
+
+
+section {
+    display: flex;
+    gap: 20px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.rightSidebar {
+    width: 280px;
+    margin: 0px 0px 0px 10px;
+}

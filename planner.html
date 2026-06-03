@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Admission</title>
+    <link rel="stylesheet" href="style/calendarstyle.css">
+    <link rel="apple-touch-icon" href="images/clover.png?v=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@248&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Monsieur+La+Doulaise&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="home"><a href="index.html">back home</a></div>
+    <h1>Study-Tracker</h1>
+    <div class="container">
+        <div class="layout">
+            <aside class="leftSidebar">
+                <div class="top-bar">
+                    <select id="monthSelect"></select>
+                    <select id="yearSelect"></select>
+                </div><!--top-bar-->
+                <div class="dday-card">
+                    <div class="images"></div>
+
+                    <h2>d-day counter</h2>
+                    <div class="dday-item">
+                        <span>TGAT-TPAT</span>
+                        <span id="tgatDay"></span>
+                    </div>
+
+                    <div class="dday-item">
+                        <span>ALEVEL</span>
+                        <span id="alevelDay"></span>
+                    </div>
+            </aside><!--leftsidebar-->
+
+            <main>
+
+                <div class="card">
+
+                    <div class="level-box">
+                        <div>
+                            <h2>Year Streak</h2>
+                            <p id="streaktext">0 day</p>
+                        </div>
+
+                        <div>
+                            <h2 id="levelText">Level 1</h2>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress" id="YearProgress"></div>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <h2>Monthly Study Tracker</h2>
+                    <div class="progress-container">
+                        <div class="progress" id="monthProgress"></div>
+                    </div>
+
+                    <p class="small-text" id="monthText">0%</p>
+
+
+                    <div class="calendar" id="calendar">
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+                        <div class="day">23</div>
+                        <div class="day">24</div>
+
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+
+                        <div class="day">30</div>
+                        <div class="day">31</div>
+                    </div>
+                </div>
+
+                <section>
+                    <div class="box">
+                        <div class="mathcard">
+                            <h2> Math </h2>
+                            <div class="progress-container">
+                                <div class="progress" id="subjectProgress"></div>
+                            </div>
+
+                            <p class="small-text" id="subjectText">0%</p>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เซต</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ตรรกศาสตร์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>จำนวนจริง</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความสัมพันธ์และฟังก์ชัน</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ฟังก์ชันเอกซ์โพเนนเชียลและฟังก์ชันลอการิทึม</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เรขาคณิตวิเคราะห์และภาคตัดกรวย</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>หลักการนับเบื้องต้น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความน่าจะเป็น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ฟังก์ชันตรีโกณมิติ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เมทริกซ์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เวกเตอร์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>จำนวนเชิงซ้อน</label>
+                        </div>
+
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ลำดับและอนุกรม</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>แคลคูลัสเบื้องต้น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความหมายของสถิติศาสตร์และข้อมูล</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>การวิเคราะห์และนำเสนอข้อมูลเชิงคุณภาพ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>การวิเคราะห์และนำเสนอข้อมูลเชิงปริมาณ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</label>
+                        </div>
+                    </div><!--box-->
+
+                    <div class="box">
+                        <div class="mathcard">
+                            <h2> ALEVEL-Math</h2>
+                            <div class="progress-container">
+                                <div class="progress" id="subjectProgress"></div>
+                            </div>
+                            <p class="small-text" id="subjectText">0%</p>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เซต</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ตรรกศาสตร์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>จำนวนจริง</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความสัมพันธ์และฟังก์ชัน</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ฟังก์ชันเอกซ์โพเนนเชียลและฟังก์ชันลอการิทึม</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เรขาคณิตวิเคราะห์และภาคตัดกรวย</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>หลักการนับเบื้องต้น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความน่าจะเป็น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ฟังก์ชันตรีโกณมิติ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เมทริกซ์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>เวกเตอร์</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>จำนวนเชิงซ้อน</label>
+                        </div>
+
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ลำดับและอนุกรม</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>แคลคูลัสเบื้องต้น</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ความหมายของสถิติศาสตร์และข้อมูล</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>การวิเคราะห์และนำเสนอข้อมูลเชิงคุณภาพ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>การวิเคราะห์และนำเสนอข้อมูลเชิงปริมาณ</label>
+                        </div>
+
+                        <div class="task">
+                            <input type="checkbox" class="subjectCheck1">
+                            <label>ตัวแปรสุ่มและการแจกแจงความน่าจะเป็น</label>
+                        </div>
+                    </div><!--box-->
+
+                </section>
+            </main>
+
+            <aside class="rightSidebar">
+                <div class="card">
+                    <h2>Checklist</h2>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>ALEVEL MATH 1 3/71</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TPAT 3 12/70</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>ALEVEL PHYSICS 3/71</label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 1 12/70</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 2 12/70</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="dailyCheck">
+                        <label>TGAT 3 12/70</label>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2> Study Statement</h2>
+                    <textarea id="statement" placeholder="how about u :3 ...."></textarea>
+                </div>
+            </aside><!--rightSidebar-->
+        </div><!--layout-->
+    </div><!--layout-->
+
+
+</body>
+
+</html>
