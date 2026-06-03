@@ -11,13 +11,6 @@
     font-display: swap;
 }
 
-.source-code-pro {
-    font-family: "Source Code Pro", monospace;
-    font-optical-sizing: auto;
-    font-weight: 248;
-    font-style: normal;
-}
-
 .bitcount-prop-single {
     font-family: "Bitcount Prop Single", system-ui;
     font-optical-sizing: auto;
@@ -28,13 +21,6 @@
         "CRSV" 0.5,
         "ELSH" 0,
         "ELXP" 0;
-}
-
-.eb-garamond {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
 }
 
 .monsieur-la-doulaise-regular {
@@ -56,7 +42,6 @@ body {
     margin: auto;
     background: url(https://i.pinimg.com/736x/4d/8b/07/4d8b079149e6b0862548e031aec3b53f.jpg);
     background-size: 500px;
-    font-size: smaller;
     font-family: "Bitcount Prop Single", system-ui;
 }
 
@@ -64,8 +49,16 @@ body {
     box-sizing: border-box;
 }
 
+.container {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    max-width: 1500px;
+
+}
+
 .layout {
-    width: 1600px;
+    width: 1500px;
     height: auto;
     border: 2px solid #a6aab4;
     border-radius: 10px;
@@ -76,13 +69,6 @@ body {
     border-width: 15px;
     border-style: solid;
     border-image: url(https://i.postimg.cc/RZFWTWwp/esevc3.png) 12 fill round;
-}
-
-.container {
-    display: grid;
-    place-items: center;
-    max-width: 1600px;
-    margin: auto;
 }
 
 .container a {
@@ -99,11 +85,12 @@ body {
     width: 100%;
     height: 380px;
     box-shadow: inset 0px 0px 20px 5px var(--content);
-    background: url("index.html\ images/kamui2.png");
+    background: url("../images/index.html/kamui2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 40%;
 }
+
 
 .header h1 {
     width: max-content;
@@ -261,10 +248,10 @@ ul {
 
 .main {
     padding: 3px;
-    margin:10px 5px 5px 5px;
+    margin: 10px 5px 5px 5px;
     border-radius: 10px;
     width: 100%;
-    height: 1000px;
+    height: 1200px;
     overflow: hidden;
     overflow-y: auto;
     overflow-x: hidden;
@@ -469,6 +456,7 @@ main::-webkit-scrollbar {
         transform: translateX(-50%);
     }
 }
+
 .box-statustwo {
     background: url("https://i.pinimg.com/1200x/86/7d/3c/867d3c0c94eccf4b8c350b9aced1428b.jpg");
     background-size: cover;
@@ -491,27 +479,14 @@ footer {
     border-radius: 5px;
 }
 
-@media only screen and (max-width: 600px) {
-    #flex {
-        flex-wrap: wrap;
-    }
-
-    main {
-        order: 2;
-    }
-
-    #rightSidebar {
-        order: 3;
-    }
-
-    #navbar ul {
-        flex-wrap: wrap;
-    }
+@media only screen and (max-width: 767px) {
 
     body {
         padding: 10px;
-        background-size: cover;
-        background-position: center;
+        margin: auto;
+        display: block;
+        
+        place-items: center;
     }
 
 }
